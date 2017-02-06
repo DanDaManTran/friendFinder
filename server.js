@@ -22,6 +22,7 @@ app.use("/", route.home);
 app.use("/", route.survey);
 app.use("/", apiRoutes.route);
 app.use("/", apiRoutes.posting),
+app.use(express.static(path.join(__dirname, "app")));
 
 //listenon the the PORT to see if anything is happening there
 app.listen(PORT, function() {
