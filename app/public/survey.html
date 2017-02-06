@@ -4,132 +4,298 @@
 	<title>Survey</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+		opacity: 0.2;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+		opacity: 0.5;
+}
+
+/*Giving some spaces to the radio buttons*/
+.choices{
+	margin: 2rem;
+}
+
+input[type="radio"]{
+  margin: 0 1rem 0 2rem;
+}
+
+.agree{
+	margin-left: 2rem;
+}
+
+form{
+	margin-bottom: 4rem;
+}
+
+/*centering the everything*/
+.container{
+	text-align: center;
+}
+
+.warning{
+	border-style: solid;
+	border-width: 4px;
+	border-color: #AA1111;
+}
+
+</style>
 </head>
 <body>
+	<div class="container">
+		<h1>Survey Questions</h1>
 
-	<h1>Survey Questions</h1>
-
-	<h3>About You</h3>
-
-	<h4>Name (Required)</h4>
-
-	<input id="nameInput">
-
-	<h4>Link to Photo Image (Required)</h4>
-
-	<input id="pictureInput">
+		<h3>About You</h3>
 
 
-	<h4>You find it difficult to introduce yourself to other people.</h4>
-	<form>
-		<input type="radio" name="q1" value="1">1
-		<input type="radio" name="q1" value="2">2
-		<input type="radio" name="q1" value="3">3
-		<input type="radio" name="q1" value="4">4
-		<input type="radio" name="q1" value="5">5
-	</form>
+			<h4>Name (Required)</h4>
 
-	<h4>You often get so lost in thoughts that you ignore or forget your surroundings.</h4>
-	<form>
-		<input type="radio" name="q2" value="1">1
-		<input type="radio" name="q2" value="2">2
-		<input type="radio" name="q2" value="3">3
-		<input type="radio" name="q2" value="4">4
-		<input type="radio" name="q2" value="5">5
-	</form>
+			<input id="nameInput">
 
-	<h4>You try to respond to your e-mails as soon as possible and cannot stand a messy inbox.</h4>
-	<form>
-		<input type="radio" name="q3" value="1">1
-		<input type="radio" name="q3" value="2">2
-		<input type="radio" name="q3" value="3">3
-		<input type="radio" name="q3" value="4">4
-		<input type="radio" name="q3" value="5">5
-	</form>
+			<h4>Link to Photo Image (Required)</h4>
 
-	<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-	<form>
-		<input type="radio" name="q4" value="1">1
-		<input type="radio" name="q4" value="2">2
-		<input type="radio" name="q4" value="3">3
-		<input type="radio" name="q4" value="4">4
-		<input type="radio" name="q4" value="5">5
-	</form>
+			<input id="pictureInput">
 
-	<h4>You do not usually initiate conversations.</h4>
-	<form>
-		<input type="radio" name="q5" value="1">1
-		<input type="radio" name="q5" value="2">2
-		<input type="radio" name="q5" value="3">3
-		<input type="radio" name="q5" value="4">4
-		<input type="radio" name="q5" value="5">5
-	</form>
+		<div id="survey">
+			<h4>You find it difficult to introduce yourself to other people.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q1" value="1">1
+				<input type="radio" name="q1" value="2">2
+				<input type="radio" name="q1" value="3">3
+				<input type="radio" name="q1" value="4">4
+				<input type="radio" name="q1" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-	<h4>You rarely do something just out of sheer curiosity.</h4>
-	<form>
-		<input type="radio" name="q6" value="1">1
-		<input type="radio" name="q6" value="2">2
-		<input type="radio" name="q6" value="3">3
-		<input type="radio" name="q6" value="4">4
-		<input type="radio" name="q6" value="5">5
-	</form>
+			<h4>You often get so lost in thoughts that you ignore or forget your surroundings.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q2" value="1">1
+				<input type="radio" name="q2" value="2">2
+				<input type="radio" name="q2" value="3">3
+				<input type="radio" name="q2" value="4">4
+				<input type="radio" name="q2" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-	<h4>Being organized is more important to you than being adaptable.</h4>
-	<form>
-		<input type="radio" name="q7" value="1">1
-		<input type="radio" name="q7" value="2">2
-		<input type="radio" name="q7" value="3">3
-		<input type="radio" name="q7" value="4">4
-		<input type="radio" name="q7" value="5">5
-	</form>
+			<h4>You try to respond to your e-mails as soon as possible and cannot stand a messy inbox.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q3" value="1">1
+				<input type="radio" name="q3" value="2">2
+				<input type="radio" name="q3" value="3">3
+				<input type="radio" name="q3" value="4">4
+				<input type="radio" name="q3" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-	<h4>You are usually highly motivated and energetic.</h4>
-	<form>
-		<input type="radio" name="q8" value="1">1
-		<input type="radio" name="q8" value="2">2
-		<input type="radio" name="q8" value="3">3
-		<input type="radio" name="q8" value="4">4
-		<input type="radio" name="q8" value="5">5
-	</form>
+			<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q4" value="1">1
+				<input type="radio" name="q4" value="2">2
+				<input type="radio" name="q4" value="3">3
+				<input type="radio" name="q4" value="4">4
+				<input type="radio" name="q4" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-	<h4>You often feel as if you have to justify yourself to other people.</h4>
-	<form>
-		<input type="radio" name="q9" value="1">1
-		<input type="radio" name="q9" value="2">2
-		<input type="radio" name="q9" value="3">3
-		<input type="radio" name="q9" value="4">4
-		<input type="radio" name="q9" value="5">5
-	</form>
+			<h4>You do not usually initiate conversations.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q5" value="1">1
+				<input type="radio" name="q5" value="2">2
+				<input type="radio" name="q5" value="3">3
+				<input type="radio" name="q5" value="4">4
+				<input type="radio" name="q5" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-	<h4>Your home and work environments are quite tidy.</h4>
-	<form>
-		<input type="radio" name="q10" value="1">1
-		<input type="radio" name="q10" value="2">2
-		<input type="radio" name="q10" value="3">3
-		<input type="radio" name="q10" value="4">4
-		<input type="radio" name="q10" value="5">5
-	</form>
+			<h4>You rarely do something just out of sheer curiosity.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q6" value="1">1
+				<input type="radio" name="q6" value="2">2
+				<input type="radio" name="q6" value="3">3
+				<input type="radio" name="q6" value="4">4
+				<input type="radio" name="q6" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-	<button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="glyphicon glyphicon-search"></span>Find your new friends.</button>
+			<h4>Being organized is more important to you than being adaptable.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q7" value="1">1
+				<input type="radio" name="q7" value="2">2
+				<input type="radio" name="q7" value="3">3
+				<input type="radio" name="q7" value="4">4
+				<input type="radio" name="q7" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
+			<h4>You are usually highly motivated and energetic.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q8" value="1">1
+				<input type="radio" name="q8" value="2">2
+				<input type="radio" name="q8" value="3">3
+				<input type="radio" name="q8" value="4">4
+				<input type="radio" name="q8" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-	<script type="text/javascript">
-    $("#search-btn").on("click", function() {
-			var quizAnswer = [];
+			<h4>You often feel as if you have to justify yourself to other people.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q9" value="1">1
+				<input type="radio" name="q9" value="2">2
+				<input type="radio" name="q9" value="3">3
+				<input type="radio" name="q9" value="4">4
+				<input type="radio" name="q9" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
 
-			for(var i = 1; i<11; i++){
+			<h4>Your home and work environments are quite tidy.</h4>
+			<form>
+				Strongly Disagree <input type="radio" name="q10" value="1">1
+				<input type="radio" name="q10" value="2">2
+				<input type="radio" name="q10" value="3">3
+				<input type="radio" name="q10" value="4">4
+				<input type="radio" name="q10" value="5">5 <span class="agree">Strongly Agree</span>
+			</form>
+		</div>
+
+		<button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="glyphicon glyphicon-search"></span>Find your new friends.</button>
+
+		<div>
+			<a href="/api/friends">API Friends List</a> <a href="https://github.com/DanDaManTran/friendFinder">GitHub Repo</a>
+		</div>
+	</div>
+		<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+			<span class="close">&times;</span>
+			<h1>Meet your new best friend</h1>
+			<h3 id="newName"></h3>
+			<img id="newImage" src=""/>
+	  </div>
+
+	</div>
+
+<script type="text/javascript">
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+//once the search button is click it will validate and gather the information so it can search for common interst in the friends database
+function searchFriend (){
+
+		var quizAnswer = [];
+
+		for(var i = 1; i<11; i++){
+			if($('input[name=q' + i + ']:checked').val() !== undefined){
 				quizAnswer.push($('input[name=q' + i + ']:checked').val());
-			};
+			}
+		}
 
-			var surveyData = {
-				name: $("#nameInput").val(),
-				picture: $("#pictureInput").val(),
-				answer: quizAnswer
-			};
+		var surveyData = {
+			name: $("#nameInput").val(),
+			photo: $("#pictureInput").val(),
+			scores: quizAnswer
+		};
 
-			console.log(surveyData);
+		console.log(surveyData);
+		$(".warning").removeClass("warning");
 
-    });
-  </script>
+		if(quizAnswer.length<10){
+			$("#survey").addClass("warning");
+		}
+
+		if(surveyData.name === ""){
+			$("#nameInput").addClass("warning");
+		}
+
+		if(surveyData.photo === ""){
+			$("#pictureInput").addClass("warning");
+		}
+
+		if(quizAnswer.length===10 && surveyData.photo !== "" && surveyData.name !== ""){
+			updatingData(surveyData);
+		}
+}
+
+//this will calculate the best option for a friend and also add your information to the database so you can also be used as a future resorce
+function updatingData (data) {
+	$.post("/api/friends", data).done(function(data) {
+		var newFriend = data[(data.length-1)].scores;
+		var bestFriendIndex = 0;
+		var bestScore = 100000000000;
+
+		for(var i = 0; i<data.length-1; i++){
+			var score = 0;
+			var friendScore = data[i].scores;
+
+			for(var j = 0; j<10; j++){
+				score = score + Math.abs(newFriend[j] - friendScore[j]);
+			}
+
+			if(score<bestScore){
+				bestScore = score;
+				bestFriendIndex = i;
+			}
+		}
+
+		displayFriend(data[bestFriendIndex]);
+	});
+}
+
+//this will update the modal for your new friend depening on the information it is taking
+function displayFriend (data) {
+	$("#newName").text(data.name);
+	$("#newImage").attr("src", data.photo);
+	modal.style.display = "block";
+}
+
+//waiting for the document to start and listening on the button
+$("document").ready(function(){
+	$("#search-btn").on("click", function() {
+		searchFriend();
+	});
+});
+</script>
 </body>
 </html>
