@@ -8,10 +8,14 @@ In this activity, you'll build a compatibility-based "FriendFinder" application 
 
 After clone this. You should install the packages.
 
+```
 npm install
+```
 
 Then you create a local server.
 
+```
 node server.js
+```
 
 When you done that go to the locala website and you are ready to find a new friend.
