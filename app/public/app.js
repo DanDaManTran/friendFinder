@@ -5,7 +5,7 @@ function searchFriend (){
 
 		for(var i = 1; i<11; i++){
 			if($('input[name=q' + i + ']:checked').val() !== undefined){
-				quizAnswer.push($('input[name=q' + i + ']:checked').val());
+				quizAnswer.push(parseInt($('input[name=q' + i + ']:checked').val()));
 			}
 		}
 
