@@ -15,7 +15,6 @@ function searchFriend (){
 			scores: quizAnswer
 		};
 
-		console.log(surveyData);
 		$(".warning").removeClass("warning");
 
 		if(quizAnswer.length<10){
@@ -37,8 +36,8 @@ function searchFriend (){
 
 //this will calculate the best option for a friend and also add your information to the database so you can also be used as a future resorce
 function updatingData (data) {
-	$.post("/api/friends", data).done(function(data) {
-		var newFriend = data[(data.length-1)].scores;
+	$.post("/api/friends", data).done(function(result) {
+		var newFriend = result[(result.length-1)].scores;
 		var bestFriendIndex = 0;
 		var bestScore = 100000000000;
 
@@ -47,6 +46,7 @@ function updatingData (data) {
 			var friendScore = data[i].scores;
 
 			for(var j = 0; j<10; j++){
+
 				score = score + Math.abs(newFriend[j] - friendScore[j]);
 			}
 
@@ -56,7 +56,7 @@ function updatingData (data) {
 			}
 		}
 
-		displayFriend(data[bestFriendIndex]);
+		displayFriend(result[bestFriendIndex]);
 	});
 }
 

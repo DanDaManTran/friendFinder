@@ -22,7 +22,7 @@ app.use("/", route.home);
 app.use("/", route.survey);
 app.use("/", apiRoutes.route);
 app.use("/", apiRoutes.posting),
-app.use(express.static(path.join(__dirname, "app")));
+app.use(express.static(path.join(__dirname, "/app/public")));
 
 //listenon the the PORT to see if anything is happening there
 app.listen(process.env.PORT || 5000);
